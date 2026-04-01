@@ -58,6 +58,7 @@ By superimposing the heatmap onto the original image, we can see exactly what th
 ---
 ### Grad-CAM Interpretation 
 
+**Descrition:**
 The Grad-CAM results show a scattered heatmap that is beginning to focus on the correct object. While the baseline model correctly ignored the background, its "attention" was fragmented across various leaf edges, suggesting it was relying on general "greenery" rather than specific herb structures (Weak Feature Learning). However, because the primary "hot zones" are located directly on the leaf textures, there is clear evidence that the model is looking at the plant to make decisions; the architectural improvements in Activity 3 are simply needed to consolidate these scattered highlights into a single, confident detection of the herb's unique features.
 
 ---
@@ -68,42 +69,56 @@ The Grad-CAM results show a scattered heatmap that is beginning to focus on the 
 ### 7. Train Improved Model (20 epochs)
 <img width="769" height="589" alt="image" src="https://github.com/user-attachments/assets/508e4d85-4ca8-41a3-816c-bab99ed1c7c9" />
 
+**Descrition:**
+Shows the training logs where Batch Normalization and Dropout were applied. The steady decrease in loss and rise in accuracy indicates a more stable and efficient learning process compared to the baseline.
 
 ---
 
 ### 8. Improved Classification Report
 <img width="411" height="425" alt="image" src="https://github.com/user-attachments/assets/d982433e-f970-47e8-8f49-40c4c4327f1d" />
 
-
+**Descrition:**
+A text summary of the final metrics showing a Validation Accuracy of 66.20%. It proves the model improved by over 6% and now identifies difficult classes more reliably.
 
 ---
 
 ### 9. Improved Confusion Matrix
 <img width="763" height="673" alt="image" src="https://github.com/user-attachments/assets/b2622a98-b3d0-4f2d-803d-c5b96083e1e6" />
 
+**Descrition:**
+Displays a much cleaner diagonal line, meaning more herbs are correctly classified. It specifically shows that previous "blind spots" for certain herbs have been largely resolved.
 
 ---
 
 ### 10. Improved (ROC) Curve and Area Under the Curve (AUC) Score
 <img width="719" height="593" alt="image" src="https://github.com/user-attachments/assets/f3023d15-b221-453b-9e4c-c121f7686c3a" />
 
+**Descrition:**
+Each class curve is pushed further toward the top-left, with many reaching an AUC of 1.00. This confirms the model has an excellent ability to distinguish between the 20 herb types.
 
 ---
 
 ### 11. Improved Precision, Recall, F1-score per Class
 <img width="1007" height="503" alt="image" src="https://github.com/user-attachments/assets/b27084ad-f921-4307-99ba-01d11316d6e9" />
 
+**Descrition:**
+A bar chart showing balanced performance across all metrics. Unlike the baseline, every herb now has a functional score, proving the model no longer "ignores" harder-to-learn classes.
 
 ---
 
 ### Compare Results (Before vs After)
 <img width="333" height="150" alt="image" src="https://github.com/user-attachments/assets/7b49693b-dd5a-40c7-983a-ebeb649e02f2" />
 
+**Descrition:**
+A comparison highlighting the 6.20% accuracy boost and improved F1-scores. It confirms that the architectural enhancements successfully closed the gap between training and validation performance.
+
 ---
 
 ### 12. Visualization of Improvement
 <img width="835" height="395" alt="image" src="https://github.com/user-attachments/assets/2f2c0dce-308f-4fa3-a41b-2a2df57384c4" />
 
+**Descrition:**
+Plots the Accuracy and Loss curves side-by-side. The lines are much closer together than in the baseline, which is visual proof that the model is now generalizing well to new images.
 
 ---
 
