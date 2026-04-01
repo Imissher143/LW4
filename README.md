@@ -110,7 +110,7 @@ A bar chart showing balanced performance across all metrics. Unlike the baseline
 <img width="333" height="150" alt="image" src="https://github.com/user-attachments/assets/7b49693b-dd5a-40c7-983a-ebeb649e02f2" />
 
 **Descrition:**
-A comparison highlighting the 6.20% accuracy boost and improved F1-scores. It confirms that the architectural enhancements successfully closed the gap between training and validation performance.
+A comparison highlighting the 66.20% accuracy boost and improved F1-scores. It confirms that the architectural enhancements successfully closed the gap between training and validation performance.
 
 ---
 
