@@ -9,27 +9,31 @@ https://drive.google.com/drive/folders/1qWRfwrAkRGwY1DyItX0mTxAXM5JxtdGY?usp=dri
 ### Classification Report
 <img width="448" height="424" alt="image" src="https://github.com/user-attachments/assets/88d77fae-8ff8-42ae-96ca-319a88d872eb" />
 
-
+**Descrition:**
+A detailed summary providing the precision, recall, and F1-score for each of the 20 herb classes, along with the overall model accuracy of 0.60.
 ---
 
 ### 2. Confusion Matrix
 <img width="768" height="678" alt="image" src="https://github.com/user-attachments/assets/58487756-fbee-4dd6-b761-f191b03fb3c8" />
 
+**Descrition:**
+A visual grid showing the frequency of correct and incorrect predictions for each class, highlighting specific areas where the model confuses similar herbs.
 
 ---
 
 ### 3. (ROC) Curve and Area Under the Curve (AUC) Score
 <img width="733" height="604" alt="image" src="https://github.com/user-attachments/assets/551fe746-3ced-452e-80ce-b7e71d954d9b" />
 
-
+**Descrition:**
+A plot illustrating the model's diagnostic ability across various thresholds, with an Area Under the Curve (AUC) score for each class indicating how well the model distinguishes between them.
 
 ---
 
 ### 4. Precision, Recall, F1-score per Class
 <img width="1003" height="503" alt="image" src="https://github.com/user-attachments/assets/6dec6bf0-5c5d-45a7-9c33-40e4868eccf3" />
 
-
-
+**Descrition:**
+A bar chart providing a side-by-side visual comparison of key performance metrics across all classes, making it easy to identify weakest-performing classes like sambang_getih.
 
 ---
 
