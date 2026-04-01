@@ -44,14 +44,16 @@ A bar chart providing a side-by-side visual comparison of key performance metric
 ### 5. Grad-CAM Heatmap
 <img width="353" height="351" alt="image" src="https://github.com/user-attachments/assets/4dfb8bb8-7ea8-41a0-8a4a-9ce4ac9699c0" />
 
-
+**Descrition:**
+This raw heatmap identifies the specific regions in the image that had the highest impact on the model's final classification decision. Bright yellow/green areas indicate high-influence features.
 
 ---
 
 ### 6. Grad-CAM Overlay
 <img width="334" height="352" alt="image" src="https://github.com/user-attachments/assets/58170292-3c76-4599-a7ea-7c95393c6ead" />
 
-
+**Descrition:**
+By superimposing the heatmap onto the original image, we can see exactly what the model "looked at." for example, the model is highlighting various leaf textures and serrated edges.
 
 ---
 ### Grad-CAM Interpretation 
