@@ -63,32 +63,32 @@ The Grad-CAM results show a scattered heatmap that is beginning to focus on the 
 # Activity 3: Model Enhancement and Performance Optimization
 
 
-### 8. Train Improved Model (20 epochs)
+### 7. Train Improved Model (20 epochs)
 <img width="769" height="589" alt="image" src="https://github.com/user-attachments/assets/508e4d85-4ca8-41a3-816c-bab99ed1c7c9" />
 
 
 ---
 
-### 9. Improved Classification Report
+### 8. Improved Classification Report
 <img width="411" height="425" alt="image" src="https://github.com/user-attachments/assets/d982433e-f970-47e8-8f49-40c4c4327f1d" />
 
 
 
 ---
 
-### 10. Improved Confusion Matrix
+### 9. Improved Confusion Matrix
 <img width="763" height="673" alt="image" src="https://github.com/user-attachments/assets/b2622a98-b3d0-4f2d-803d-c5b96083e1e6" />
 
 
 ---
 
-### 11. Improved (ROC) Curve and Area Under the Curve (AUC) Score
+### 10. Improved (ROC) Curve and Area Under the Curve (AUC) Score
 <img width="719" height="593" alt="image" src="https://github.com/user-attachments/assets/f3023d15-b221-453b-9e4c-c121f7686c3a" />
 
 
 ---
 
-### 12. Improved Precision, Recall, F1-score per Class
+### 11. Improved Precision, Recall, F1-score per Class
 <img width="1007" height="503" alt="image" src="https://github.com/user-attachments/assets/b27084ad-f921-4307-99ba-01d11316d6e9" />
 
 
@@ -99,13 +99,13 @@ The Grad-CAM results show a scattered heatmap that is beginning to focus on the 
 
 ---
 
-### 13. Visualization of Improvement
+### 12. Visualization of Improvement
 <img width="835" height="395" alt="image" src="https://github.com/user-attachments/assets/2f2c0dce-308f-4fa3-a41b-2a2df57384c4" />
 
 
 ---
 
-## 14. GUIDE QUESTIONS
+## 13. GUIDE QUESTIONS
 **A. Model Evaluation Analysis**
 1. What were the weakest-performing classes based on the confusion matrix? sambang_getih was the baseline's worst (0.04 recall). Now, the main challenges are niyog_niyugan and lemon_balm due to their similarity to other leafy herbs.
 2. How did Precision, Recall, and F1-score vary across classes? Herbs with unique shapes have high precision. "Cousin" plants (similar looking) have lower recall because the model occasionally confuses them.
