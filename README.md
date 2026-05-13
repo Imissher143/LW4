@@ -121,59 +121,47 @@ A comparison highlighting the 66.20% accuracy boost and improved F1-scores. It c
 # 📋 Guide Questions — LW4: Improving CNN Performance
 
 ---
+## Guide Questions & Answers
 
-## A. Model Evaluation Analysis
+### A. Model Evaluation Analysis
 
-**1. What were the weakest-performing classes based on the confusion matrix?**
-The confusion matrix from the LW3 baseline reveals the weakest classes as those with low diagonal values and many misclassifications spread across other columns. These are classes that visually look similar to each other, causing the baseline model to frequently mix them up.
+#### 1. What were the weakest-performing classes based on the confusion matrix?
+The weakest class was `sambang_getih`, which got a super low F1-score of only 3%. Other struggling classes were `ginger` and `bay_laurel`, which both scored below 40%.
 
-**2. How did Precision, Recall, and F1-score vary across classes?**
-Based on the per-class bar chart, visually distinct classes scored high across all three metrics, while similar-looking classes showed lower recall since the baseline model kept confusing them with nearby classes.
+#### 2. How did Precision, Recall, and F1-score vary across classes?
+The scores varied heavily because some plant types were much easier for the network to recognize. For example, `lemon_basil` reached a high F1-score of 86%, while `sambang_getih` dropped close to zero.
 
-**3. What does a low recall indicate in your model?**
-It means the model is "missing" that class — it sees the image but labels it as something else instead. For example, a class with 0.40 recall means the model only got 40% of those images right.
+#### 3. What does a low recall indicate in your model?
+A low recall means the model is completely missing a lot of the actual target images during testing. Instead of finding them, it mistakenly labels them as other classes.
 
-**4. How does AUC score reflect model performance compared to accuracy?**
-AUC shows how well the model separates each class across all thresholds, not just one cutoff. A model can have decent AUC but still low accuracy if some classes dominate the dataset.
-
----
-
-## B. Model Improvement
-
-**5. How did data augmentation affect validation accuracy?**
-The LW4 model adds `RandomBrightness` on top of flip, rotation, zoom, and contrast — forcing the model to recognize classes regardless of lighting or angle, which directly improved generalization to the validation set.
-
-**6. Why is Batch Normalization important in CNNs?**
-Every Conv2D block uses `BatchNormalization()` right after each convolution. It stabilized training and prevented loss spikes, letting the model learn smoothly across all 5 blocks.
-
-**7. What role did Dropout play in improving your model?**
-Dropout increases progressively from 0.1 in Block 1 up to 0.3 in the head, preventing the model from memorizing specific patterns. It forced the network to learn general features rather than relying on specific neurons.
-
-**8. How did Early Stopping prevent overfitting?**
-`EarlyStopping(patience=7, restore_best_weights=True)` automatically stops training when val_accuracy stops improving and snaps back to the best weights — so the saved model never gets a chance to overfit.
+#### 4. How does AUC score reflect model performance compared to accuracy?
+Even though the baseline overall accuracy was low at 61%, the AUC score was very high at 0.9423. This shows the model still has great potential to separate the classes once training issues are fixed.
 
 ---
 
-## C. Performance Comparison
+### B. Model Improvement
 
-**9. What improvements were observed after modifying the model?**
-The comparison table shows LW4 achieving higher val accuracy, better F1-score, and improved AUC over the LW3 baseline. The generalization gap is also flagged as ✅ Good Fit when train - val ≤ 5%.
+#### 5. How did data augmentation affect validation accuracy?
+Data augmentation helped by forcing the model to look at random flipped and rotated images instead of memorizing them. This fixed the overfitting problem and let the validation accuracy smoothly rise to 74.8%.
 
-**10. Which enhancement contributed the most to performance improvement? Why?**
-The new Block 5 (512 filters) combined with Cosine Decay LR contributed the most — Block 5 gave the model enough depth to learn complex features, while cosine decay squeezed out the best accuracy within just 30 epochs.
+#### 6. Why is Batch Normalization important in CNNs?
+Batch Normalization scales the data outputs inside the network layers so they stay stable during training. This makes the model learn much faster and prevents gradients from blowing up.
 
-**11. Did the gap between training and validation accuracy decrease? Explain.**
-Yes, because LW4 uses lower L2 (5e-5), moderate dropout, and stronger augmentation — all balanced so the model learns well without memorizing. The gap is directly computed and labeled as Good Fit, Slight Overfit, or Overfitting.
+#### 7. What role did Dropout play in improving your model?
+Dropout randomly deactivated a percentage of neurons during training so the network wouldn't rely on fixed paths. This stopped the model from over-memorizing the training dataset.
+
+#### 8. How did Early Stopping prevent overfitting?
+Early stopping watched the validation loss and automatically shut down training when it stopped improving. This kept the model from running too long and saved the best weights.
 
 ---
 
-## D. Explainability (Grad-CAM Integration)
+### C. Performance Comparison
 
-**12. How did Grad-CAM help in understanding model predictions?**
-The `show_gradcam_fixed()` function builds a sub-model targeting `last_conv` and generates a heatmap showing which regions drove the prediction. It makes the model's decision visible instead of being a black box.
+#### 9. What improvements were observed after modifying the model?
+The validation accuracy jumped from 61% in the baseline up to 74.8% in the improved model. The overall training curves also looked much smoother and the final loss dropped down significantly.
 
-**13. Did the improved model focus on more relevant regions? Provide evidence.**
-With 5 conv blocks up to 512 filters, LW4 learns more detailed features — the Grad-CAM overlay shows a more concentrated heatmap on the actual subject of the image rather than scattered across the background.
+#### 10. Which enhancement contributed the most to performance improvement? Why?
+Adding Batch Normalization and Dropout together contributed the most to the improvement. They directly targeted and fixed the baseline's main issue by stabilizing the layers and stopping severe overfitting.
 
-**14. Why is explainability important in real-world AI applications?**
-Users need proof that the model is identifying things for the right reasons, not because of background noise or shadows. Without Grad-CAM, you'd have no way to catch a model that's "cheating" its way to high accuracy.
+#### 11. Did the gap between training and validation accuracy decrease? Explain.
+Yes, the gap closed up tightly because the regularization layers forced the model to generalize better. The final validation accuracy (74.8%) ended up staying very close to the training accuracy (75.1%).that the model is identifying things for the right reasons, not because of background noise or shadows. Without Grad-CAM, you'd have no way to catch a model that's "cheating" its way to high accuracy.
