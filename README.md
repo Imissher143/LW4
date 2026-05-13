@@ -7,34 +7,35 @@ https://drive.google.com/drive/folders/1qWRfwrAkRGwY1DyItX0mTxAXM5JxtdGY?usp=dri
 # Activity 1: Evaluation Metrics + Visualization
 
 ### Classification Report
-<img width="448" height="424" alt="image" src="https://github.com/user-attachments/assets/88d77fae-8ff8-42ae-96ca-319a88d872eb" />
+<img width="591" height="554" alt="image" src="https://github.com/user-attachments/assets/078fac8b-2d2a-4373-ba93-72e7393dd615" />
 
 **Description:**
-A detailed summary providing the precision, recall, and F1-score for each of the 20 herb classes, along with the overall model accuracy of 0.60.
+A classification report showing the precision, recall, F1-score, and overall accuracy (0.61) of the LW3 baseline model across 20 herb classes.
 
 ---
 
 ### 2. Confusion Matrix
-<img width="768" height="678" alt="image" src="https://github.com/user-attachments/assets/58487756-fbee-4dd6-b761-f191b03fb3c8" />
+<img width="819" height="743" alt="image" src="https://github.com/user-attachments/assets/ec6375dc-c7bc-46e9-bb1f-81e86b44d0bd" />
 
 **Description:**
-A visual grid showing the frequency of correct and incorrect predictions for each class, highlighting specific areas where the model confuses similar herbs.
+A confusion matrix illustrating the prediction performance of the LW3 baseline model across 20 herb classes, highlighting correctly classified samples along the diagonal and misclassifications between visually similar classes.
 
 ---
 
 ### 3. (ROC) Curve and Area Under the Curve (AUC) Score
-<img width="733" height="604" alt="image" src="https://github.com/user-attachments/assets/551fe746-3ced-452e-80ce-b7e71d954d9b" />
+<img width="1061" height="734" alt="image" src="https://github.com/user-attachments/assets/47af0ec8-676f-4a48-a4de-e77a56ece94f" />
+
 
 **Description:**
-A plot illustrating the model's diagnostic ability across various thresholds, with an Area Under the Curve (AUC) score for each class indicating how well the model distinguishes between them.
+A ROC curve showing the classification performance of the LW3 baseline model across 20 herb classes, with an overall AUC of 0.9423, indicating strong class separability and high discriminative capability.
 
 ---
 
 ### 4. Precision, Recall, F1-score per Class
-<img width="1003" height="503" alt="image" src="https://github.com/user-attachments/assets/6dec6bf0-5c5d-45a7-9c33-40e4868eccf3" />
+<img width="1056" height="408" alt="image" src="https://github.com/user-attachments/assets/e9e5a0e6-9449-4c0f-adcb-93edaf7da6e4" />
 
 **Description:**
-A bar chart providing a side-by-side visual comparison of key performance metrics across all classes, making it easy to identify weakest-performing classes like sambang_getih.
+A grouped bar chart comparing precision, recall, and F1-score for each class, allowing quick identification of performance imbalances—highlighting strong classes like lemon_basil and miyana, while revealing weaker ones such as sambang_getih and jeruk_besar where all three metrics lag noticeably.
 
 ---
 
@@ -66,8 +67,9 @@ The Grad-CAM results show a scattered heatmap that is beginning to focus on the 
 # Activity 3: Model Enhancement and Performance Optimization
 
 
-### 7. Train Improved Model (20 epochs)
-<img width="769" height="589" alt="image" src="https://github.com/user-attachments/assets/508e4d85-4ca8-41a3-816c-bab99ed1c7c9" />
+### 7. Train Improved Model (30 epochs)
+<img width="1072" height="771" alt="image" src="https://github.com/user-attachments/assets/966615e0-4b6b-4c36-916e-d0a5c3eff1b0" />
+<img width="1064" height="313" alt="image" src="https://github.com/user-attachments/assets/628e95ae-acc8-49c5-a9c1-9dfcda21b4b0" />
 
 **Description:**
 Shows the training logs where Batch Normalization and Dropout were applied. The steady decrease in loss and rise in accuracy indicates a more stable and efficient learning process compared to the baseline.
@@ -75,15 +77,14 @@ Shows the training logs where Batch Normalization and Dropout were applied. The 
 ---
 
 ### 8. Improved Classification Report
-<img width="411" height="425" alt="image" src="https://github.com/user-attachments/assets/d982433e-f970-47e8-8f49-40c4c4327f1d" />
-
+<img width="513" height="467" alt="image" src="https://github.com/user-attachments/assets/1efac6b8-a655-4502-b894-fe6cd56a79bb" />
 **Description:**
-A text summary of the final metrics showing a Validation Accuracy of 66.20%. It proves the model improved by over 6% and now identifies difficult classes more reliably.
+A detailed classification report summarizing precision, recall, and F1-score for each class, offering a clear numerical breakdown of model performance—showing consistently strong results for classes like mayana, sambong, and lemon_basil, while exposing weaker classifications such as sambang_getih and ginger, which have noticeably lower F1-scores and recall.
 
 ---
 
 ### 9. Improved Confusion Matrix
-<img width="763" height="673" alt="image" src="https://github.com/user-attachments/assets/b2622a98-b3d0-4f2d-803d-c5b96083e1e6" />
+<img width="823" height="747" alt="image" src="https://github.com/user-attachments/assets/4897af63-085c-470e-ba41-703467eb6c7d" />
 
 **Description:**
 Displays a much cleaner diagonal line, meaning more herbs are correctly classified. It specifically shows that previous "blind spots" for certain herbs have been largely resolved.
@@ -91,7 +92,8 @@ Displays a much cleaner diagonal line, meaning more herbs are correctly classifi
 ---
 
 ### 10. Improved (ROC) Curve and Area Under the Curve (AUC) Score
-<img width="719" height="593" alt="image" src="https://github.com/user-attachments/assets/f3023d15-b221-453b-9e4c-c121f7686c3a" />
+<img width="1059" height="724" alt="image" src="https://github.com/user-attachments/assets/88717431-51fd-4000-b885-09dd6ad7f7e7" />
+
 
 **Description:**
 Each class curve is pushed further toward the top-left, with many reaching an AUC of 1.00. This confirms the model has an excellent ability to distinguish between the 20 herb types.
@@ -99,7 +101,8 @@ Each class curve is pushed further toward the top-left, with many reaching an AU
 ---
 
 ### 11. Improved Precision, Recall, F1-score per Class
-<img width="1007" height="503" alt="image" src="https://github.com/user-attachments/assets/b27084ad-f921-4307-99ba-01d11316d6e9" />
+<img width="1064" height="408" alt="image" src="https://github.com/user-attachments/assets/9f5b5ef2-f50f-473c-8b7f-79c05a1c78af" />
+
 
 **Description:**
 A bar chart showing balanced performance across all metrics. Unlike the baseline, every herb now has a functional score, proving the model no longer "ignores" harder-to-learn classes.
@@ -107,43 +110,70 @@ A bar chart showing balanced performance across all metrics. Unlike the baseline
 ---
 
 ### Compare Results (Before vs After)
-<img width="333" height="150" alt="image" src="https://github.com/user-attachments/assets/7b49693b-dd5a-40c7-983a-ebeb649e02f2" />
+<img width="584" height="277" alt="image" src="https://github.com/user-attachments/assets/13076f65-b559-4774-93ef-4ec8365078ac" />
 
 **Description:**
 A comparison highlighting the 66.20% accuracy boost and improved F1-scores. It confirms that the architectural enhancements successfully closed the gap between training and validation performance.
 
----
-
-### 12. Visualization of Improvement
-<img width="835" height="395" alt="image" src="https://github.com/user-attachments/assets/2f2c0dce-308f-4fa3-a41b-2a2df57384c4" />
-
-**Description:**
-Plots the Accuracy and Loss curves side-by-side. The lines are much closer together than in the baseline, which is visual proof that the model is now generalizing well to new images.
 
 ---
 
-## 13. GUIDE QUESTIONS
-**A. Model Evaluation Analysis**
-1. What were the weakest-performing classes based on the confusion matrix? sambang_getih was the baseline's worst (0.04 recall). Now, the main challenges are niyog_niyugan and lemon_balm due to their similarity to other leafy herbs.
-2. How did Precision, Recall, and F1-score vary across classes? Herbs with unique shapes have high precision. "Cousin" plants (similar looking) have lower recall because the model occasionally confuses them.
-3. What does a low recall indicate in your model? This indicates the model is "missing" the plant—e.g., it sees a bay_laurel but incorrectly labels it as something else.
-4. How does AUC score reflect model performance compared to accuracy? A high AUC (0.90+) shows the model "understands" the differences between classes well, even while the raw accuracy (66%) is still catching up.
-
-**B. Model Improvement**
-5. How did data augmentation affect validation accuracy? Forced the model to learn shapes regardless of angle or zoom, leading to a 6% accuracy boost.
-6. Why is Batch Normalization important in CNNs? Stabilized the training process and prevented volatile "spikes" in the loss curves.
-7. What role did Dropout play in improving your model? Prevented the model from being "lazy" by relying on specific pixels; it forced the network to learn robust, overall patterns.
-8. How did Early Stopping prevent overfitting? Automatically stopped training at Epoch 20 to prevent overfitting (memorizing the training photos).
- 
-**C. Performance Comparison**
-9. What improvements were observed after modifying the model? Fixed the "zero-score" classes. Every herb in the dataset now has a functional F1-score.
-10. Which enhancement contributed the most to performance improvement? Why? Augmentation + Dropout. These effectively closed the gap between "memorizing" and "actually understanding."
-11. Did the gap between training and validation accuracy decrease? Explain. The gap between training and validation narrowed (56% vs 66%), indicating the model generalizes much better to new data.
-
-**D. Explainability (Grad-CAM Integration)**
-12. How did Grad-CAM help in understanding model predictions? Grad-CAM proved the model is focusing on leaf textures and patterns rather than irrelevant background noise like soil or pots.
-13. Did the improved model focus on more relevant regions? Provide evidence. Improved heatmaps are more concentrated on the center of the leaves rather than scattered along random edges.
-14. Why is explainability important in real-world AI applications? Explainability is key for real-world use. Users need to see that the AI is identifying the plant based on its actual features, not a shadow or a background color.
+# 📋 Guide Questions — LW4: Improving CNN Performance
 
 ---
 
+## A. Model Evaluation Analysis
+
+**1. What were the weakest-performing classes based on the confusion matrix?**
+The confusion matrix from the LW3 baseline reveals the weakest classes as those with low diagonal values and many misclassifications spread across other columns. These are classes that visually look similar to each other, causing the baseline model to frequently mix them up.
+
+**2. How did Precision, Recall, and F1-score vary across classes?**
+Based on the per-class bar chart, visually distinct classes scored high across all three metrics, while similar-looking classes showed lower recall since the baseline model kept confusing them with nearby classes.
+
+**3. What does a low recall indicate in your model?**
+It means the model is "missing" that class — it sees the image but labels it as something else instead. For example, a class with 0.40 recall means the model only got 40% of those images right.
+
+**4. How does AUC score reflect model performance compared to accuracy?**
+AUC shows how well the model separates each class across all thresholds, not just one cutoff. A model can have decent AUC but still low accuracy if some classes dominate the dataset.
+
+---
+
+## B. Model Improvement
+
+**5. How did data augmentation affect validation accuracy?**
+The LW4 model adds `RandomBrightness` on top of flip, rotation, zoom, and contrast — forcing the model to recognize classes regardless of lighting or angle, which directly improved generalization to the validation set.
+
+**6. Why is Batch Normalization important in CNNs?**
+Every Conv2D block uses `BatchNormalization()` right after each convolution. It stabilized training and prevented loss spikes, letting the model learn smoothly across all 5 blocks.
+
+**7. What role did Dropout play in improving your model?**
+Dropout increases progressively from 0.1 in Block 1 up to 0.3 in the head, preventing the model from memorizing specific patterns. It forced the network to learn general features rather than relying on specific neurons.
+
+**8. How did Early Stopping prevent overfitting?**
+`EarlyStopping(patience=7, restore_best_weights=True)` automatically stops training when val_accuracy stops improving and snaps back to the best weights — so the saved model never gets a chance to overfit.
+
+---
+
+## C. Performance Comparison
+
+**9. What improvements were observed after modifying the model?**
+The comparison table shows LW4 achieving higher val accuracy, better F1-score, and improved AUC over the LW3 baseline. The generalization gap is also flagged as ✅ Good Fit when train - val ≤ 5%.
+
+**10. Which enhancement contributed the most to performance improvement? Why?**
+The new Block 5 (512 filters) combined with Cosine Decay LR contributed the most — Block 5 gave the model enough depth to learn complex features, while cosine decay squeezed out the best accuracy within just 30 epochs.
+
+**11. Did the gap between training and validation accuracy decrease? Explain.**
+Yes, because LW4 uses lower L2 (5e-5), moderate dropout, and stronger augmentation — all balanced so the model learns well without memorizing. The gap is directly computed and labeled as Good Fit, Slight Overfit, or Overfitting.
+
+---
+
+## D. Explainability (Grad-CAM Integration)
+
+**12. How did Grad-CAM help in understanding model predictions?**
+The `show_gradcam_fixed()` function builds a sub-model targeting `last_conv` and generates a heatmap showing which regions drove the prediction. It makes the model's decision visible instead of being a black box.
+
+**13. Did the improved model focus on more relevant regions? Provide evidence.**
+With 5 conv blocks up to 512 filters, LW4 learns more detailed features — the Grad-CAM overlay shows a more concentrated heatmap on the actual subject of the image rather than scattered across the background.
+
+**14. Why is explainability important in real-world AI applications?**
+Users need proof that the model is identifying things for the right reasons, not because of background noise or shadows. Without Grad-CAM, you'd have no way to catch a model that's "cheating" its way to high accuracy.
